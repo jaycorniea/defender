@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEFENDER — Playing</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="stylesheet" href="/src/styles/cabinet.css" />
+  </head>
+  <body class="play-page">
+    <div class="page page-play">
+      <main class="cabinet cabinet-full">
+        <div class="play-header">
+          <a href="/">← Setup</a>
+          <div class="play-mode-tabs">
+            <a href="/play.html?mode=archive" id="tab-archive">Internet Archive</a>
+            <a href="/play.html?mode=local" id="tab-local">Local ROM</a>
+          </div>
+        </div>
+
+        <div class="cabinet-bezel cabinet-bezel-play">
+          <!-- Internet Archive: real Williams ROM, zero setup -->
+          <div id="archive-view" class="screen-frame screen-emulator hidden">
+            <iframe
+              id="ia-frame"
+              title="Defender — Internet Archive MAME"
+              allow="fullscreen"
+              loading="eager"
+            ></iframe>
+          </div>
+
+          <!-- Local MAME via EmulatorJS -->
+          <div id="local-view" class="screen-frame screen-emulator hidden">
+            <div class="loading-overlay" id="loading">
+              <div class="spinner"></div>
+              <p>LOADING MAME EMULATOR...</p>
+              <p class="loading-sub">Downloading original Williams ROM core</p>
+            </div>
+            <div id="emulator"></div>
+          </div>
+        </div>
+
+        <div class="cabinet-body cabinet-body-compact">
+          <section class="panel-section panel-compact">
+            <h3>Controls</h3>
+            <div class="control-grid control-grid-compact" id="controls-list"></div>
+            <p class="control-tip">
+              Tip: Open emulator <strong>Settings → Cheats</strong> and enable 8-way joystick for keyboard play.
+              Press <strong>5</strong> (coin) then <strong>1</strong> (start).
+            </p>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script type="module" src="/src/play.ts"></script>
+  </body>
+</html>

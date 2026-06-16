@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEFENDER — Williams Arcade</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="stylesheet" href="/src/styles/cabinet.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="marquee">
+        <h1>Defender</h1>
+        <p class="subtitle">Williams Electronics · 1981</p>
+      </header>
+
+      <main class="cabinet">
+        <div class="cabinet-bezel">
+          <div class="screen-frame setup-card" id="setup-view">
+            <h2>Authentic Arcade Emulation</h2>
+            <p class="setup-lead">
+              To be <strong>indistinguishable from the real cabinet</strong>, this runs the
+              original Williams ROM through <strong>MAME</strong> — the same emulator used
+              to preserve arcade hardware. Pixel-perfect graphics, original sound, exact game logic.
+            </p>
+
+            <div class="play-options">
+              <button class="btn-primary btn-archive" id="play-archive-btn">
+                Play Now
+                <span class="btn-sub">Real ROM via Internet Archive — no download needed</span>
+              </button>
+
+              <div class="divider"><span>or play offline with your own ROM</span></div>
+
+              <div class="drop-zone" id="drop-zone">
+                <div class="icon">💾</div>
+                <div>Drop <code>defender.zip</code> here</div>
+                <div class="hint">MAME 2003-Plus compatible ROM set</div>
+                <input type="file" id="rom-input" accept=".zip" hidden />
+              </div>
+
+              <div class="rom-status hidden" id="rom-status"></div>
+
+              <button class="btn-primary btn-local" id="play-local-btn" disabled>
+                Play Offline
+                <span class="btn-sub">Uses your uploaded ROM — works without internet</span>
+              </button>
+              <button class="btn-secondary hidden" id="clear-rom-btn">Remove ROM</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="cabinet-body">
+          <div class="control-panel">
+            <section class="panel-section">
+              <h3>Original Control Panel</h3>
+              <div class="arcade-layout">
+                <div class="joystick-area">
+                  <div class="joystick-visual"></div>
+                  <button class="arcade-btn reverse" type="button" tabindex="-1">Rev</button>
+                  <span style="font-size:0.7rem;color:var(--text-muted)">Left side</span>
+                </div>
+                <div class="button-cluster">
+                  <button class="arcade-btn fire" type="button" tabindex="-1">Fire</button>
+                  <button class="arcade-btn thrust" type="button" tabindex="-1">Thrust</button>
+                  <button class="arcade-btn smart-bomb" type="button" tabindex="-1">Bomb</button>
+                  <button class="arcade-btn hyperspace" type="button" tabindex="-1">Hyper</button>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel-section">
+              <h3>Keyboard Mapping</h3>
+              <div class="control-grid" id="controls-list"></div>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <section class="info-section">
+        <h3>Why MAME, Not a Remake?</h3>
+        <ul>
+          <li>A from-scratch recreation can never match the original — different code, art, timing, and sound</li>
+          <li>MAME runs the <strong>actual Williams ROM</strong> on emulated arcade hardware — bit-for-bit authentic</li>
+          <li><strong>Play Now</strong> uses the Internet Archive's legally preserved copy — the real game, zero setup</li>
+          <li><strong>Play Offline</strong> uses your own <code>defender.zip</code> if you own the hardware or have a legal ROM set</li>
+          <li>Enable the <strong>8-way joystick cheat</strong> in emulator settings for easier keyboard play</li>
+          <li>Press <strong>5</strong> to insert coin, <strong>1</strong> to start</li>
+        </ul>
+      </section>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
