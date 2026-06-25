@@ -13,6 +13,10 @@ Open http://localhost:5173 and click **Play Now**. This loads the authentic ROM 
 
 Press **5** to insert coin, **1** to start.
 
+## UI/API architecture (deferred — Tier 3)
+
+- [ ] Paused — Vite SPA; no backend mutations. If persistence or scores API is added, use Tier 1 per `~/grok/docs/UI-API-STANDARD.md`.
+
 ## Play Offline (your own ROM)
 
 If you own the arcade hardware (or otherwise have a legal MAME ROM set):

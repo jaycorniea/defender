@@ -4,7 +4,7 @@
   "description": "Authentic Williams Defender arcade — MAME emulation in the browser",
   "type": "module",
   "scripts": {
-    "dev": "bash \"$HOME/grok/personalassistant/scripts/vite-dev.sh\"",
+    "dev": "bash \"$HOME/grok/scripts/vite-dev.sh\"",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "setup": "bash scripts/setup-emulatorjs.sh"
